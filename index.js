@@ -17,17 +17,6 @@ app.get("/", (req, res) => {
 /* Users */
 app.use(userRoutes)
 
-app.put("/user/:id", (req, res) => {
-    const id = req.params.id
-    const body = req.body
-    res.status(200).json("Editado con éxito, con el id: " + id + "y el body: " + JSON.stringify(body))
-})
-
-app.delete("/user/:id", (req, res) => {
-    const id = req.params.id
-    res.status(200).json("Eliminado con éxito, con el id: " + id)
-})
-
 const server = http.createServer(app);
 server.listen(port, () => {
     console.log("Server working on port http://localhost:" + port)
