@@ -4,7 +4,8 @@ const getUsersService = () => {
     return users
 }
 
-const postUserService = (body) => {
+const postUserService = async (body) => {
+    await create("users", body)
     return "Creado con éxito, con el body: " + JSON.stringify(body)
 }
 

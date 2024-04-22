@@ -3,6 +3,7 @@ const http = require("http")
 const cors = require("cors")
 const port = process.env.PORT || "3004"
 const userRoutes = require("./routes/Users")
+const taskRoutes = require("./routes/Tasks")
 
 const app = express();
 
@@ -16,6 +17,8 @@ app.get("/", (req, res) => {
 
 /* Users */
 app.use(userRoutes)
+/* Tasks */
+app.use(taskRoutes)
 
 const server = http.createServer(app);
 server.listen(port, () => {
